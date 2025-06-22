@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers;
 
@@ -19,9 +20,9 @@ public class GalleriesController : ControllerBase
     [HttpGet("{id}/exhibitions")]
     public IActionResult GetExhibitions(int id)
     {
-        /*var gallery = _context.Galleries
+        var gallery = _context.Galleries
             .Include(g => g.Exhibitions)
-            .ThenInclude(e => e.ExhibitionArtworks)
+            .ThenInclude( e => e.ExhibitionArtworks)
             .ThenInclude(ea => ea.Artwork)
             .ThenInclude(a => a.Artist)
             .FirstOrDefault(g => g.GalleryId == id);
@@ -55,7 +56,6 @@ public class GalleriesController : ControllerBase
             })
         };
 
-        return Ok(result);*/
-        return Ok();
+        return Ok(result);
     }
 }

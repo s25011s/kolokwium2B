@@ -11,5 +11,5 @@ public class Gallery
     [MaxLength(50)]
     public string Name { get; set; }
     public DateTime EstablishedDate { get; set; }
-    public object Exhibitions { get; set; }
+    public List<Exhibition> Exhibitions { get; set; }
 }
